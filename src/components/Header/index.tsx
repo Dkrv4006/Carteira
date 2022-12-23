@@ -5,7 +5,11 @@ import emojis from "../../utils/emjis"
 import { useMemo } from "react"
 import { Toggle } from "../Toggle"
 
-export const Header: React.FC = () => {
+interface IProps {
+   open?: () => void;
+}
+
+export const Header: React.FC<IProps> = ({open}) => {
 
  const emojes = useMemo(() => {
      let index = Math.floor(Math.random() * emojis.length)
@@ -14,10 +18,11 @@ export const Header: React.FC = () => {
 
   return (
     <Container>
-        <Toggle/>
+        
+        
        <div className="profile">
         <h3>Olá,{emojes}</h3>
-        <span>Meu nome e daniel</span>
+        
        </div>
     </Container>
   )
@@ -25,6 +30,6 @@ export const Header: React.FC = () => {
 export const Togle = () =>{
   return(
 
-    <h1>daniel</h1>
+    <h1></h1>
   )
 } 

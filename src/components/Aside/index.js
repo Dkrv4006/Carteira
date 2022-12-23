@@ -1,6 +1,6 @@
 import { useState } from "react"
-import {Container, Logo } from "./style"
-import logo from '../../assets/logo.svg'
+import {Container } from "./style"
+
 import { NavLink } from "react-router-dom"
 
 
@@ -16,27 +16,27 @@ const toggle = () => {
     {
       name: "Dashboard",
       link: "/dashboard",
-      icon: <i class="fa-solid fa-qrcode"></i>
+      icon: <i className="fa-solid fa-qrcode"></i>
     },
     {
       name: "Mortgage",
       link: "/mortgage",
-      icon: <i class="fa-solid fa-wallet"></i>
+      icon: <i className="fa-solid fa-wallet"></i>
     },
     {
       name: "cards",
       link: "/cards",
-      icon: <i class="fa-sharp fa-solid fa-credit-card"></i>
+      icon: <i className="fa-sharp fa-solid fa-credit-card"></i>
     },
     {
       name: "History",
       link: "/history",
-      icon: <i class="fa-solid fa-box-archive"></i>
+      icon: <i className="fa-solid fa-box-archive"></i>
     },
     {
       name: "Settings",
       link: "/",
-      icon: <i class="fa-sharp fa-solid fa-gear"></i>
+      icon: <i className="fa-sharp fa-solid fa-gear"></i>
     },
   ]
 
@@ -60,7 +60,9 @@ const toggle = () => {
             
               <NavLink to={link} key={index} className="link" activeclassName="active">
                 <div className="icon">{icon}</div>
-                <div style={{display: state ? "block" :" none"}} className="text">{name}</div>
+                <div style={{display: state ? "block" :" none"}} className="text">{name}
+                
+                </div>
                 {/* <div style={{display: isOpen ? "block" : "none"}} className="link_text">{item.name}</div> */}
               </NavLink>
 

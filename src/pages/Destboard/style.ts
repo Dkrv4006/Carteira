@@ -25,6 +25,12 @@ button{
     font-size: 20px;
     color: ${props=> props.theme.colors.white};
     border-radius: 10px;
+
+    transition: filter 0.3s;
+
+    &:hover{
+        filter: brightness(0.9);
+    }
 }
 `
 

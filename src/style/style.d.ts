@@ -14,6 +14,7 @@ export interface DefaultTheme {
         white: string;
         black: string;
         gray: string;
+        text: string;
 
         success: string;
         info: string;

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-      grid-area: NL;
+       grid-area: NL;
       background-color: ${props=> props.theme.colors.secondary};
       position: sticky;
       top: 0;
@@ -39,7 +39,11 @@ h2{
       margin-top:10px;
       padding: 0 5px;
     
-      transition: all 1s;
+      transition: all .5s;
+
+      &:hover{
+            background:${props=> props.theme.colors.tertiary};
+      }
 }
 .icon{
       display: flex;
@@ -53,15 +57,21 @@ h2{
             color: ${props=> props.theme.colors.white};
             font-size: 20px;
       }
+    
 
 }
 .active{
       background: ${props=> props.theme.colors.tertiary};
+      position: relative;
+      &:hover{
+            opacity: 0.2;
+      }
 }
 .link > i{
       color: ${props=> props.theme.colors.white};
       margin: 10px;
       font-size: 30px;
+
       
 }
 .button{
@@ -70,19 +80,25 @@ h2{
       height: 50px;
       color: ${props=> props.theme.colors.white};
       font-size: 25px;
+      padding: 10px;
    
      position: relative;
       
-      
+    
      
 }
 .fa-angles-left{
       position: absolute;
-      right: 0;
-      top: 0;
+      right: 10px;
+      top:5px;
       
       animation-duration: 5s;
       animation-name: slidein;
+
+      &:hover{
+            cursor: pointer;
+            
+      }
 }
 
 span{
@@ -95,6 +111,12 @@ span{
       
             animation-duration: 5s;
             animation-name: slide;
+
+            &:hover{
+            cursor: pointer;
+            ;
+           
+      }
       }
 
 .text{

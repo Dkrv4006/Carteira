@@ -49,5 +49,42 @@ a{
 .a-intem{
     align-items: center;
 }
+
+.modal{
+    width: 100%;
+    max-width: 550px;
+    height: 80%;
+    margin: 0 auto;
+    background: ${props=> props.theme.colors.primary};
+    position: relative;
+    border-radius: 10px;
+
+}
+
+.overlay{
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0, 0.6);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+.btn{
+    position: absolute;
+   right: 0;
+    padding: 10px;
+    background: transparent;
+    i{
+        color: ${props=> props.theme.colors.white};
+        font-size: 20px;
+    }
+}
     
 `
