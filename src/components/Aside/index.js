@@ -1,6 +1,6 @@
 import { useState } from "react"
 import {Container } from "./style"
-
+import  icon   from "../../assets/icon.svg"
 import { NavLink } from "react-router-dom"
 
 
@@ -42,12 +42,11 @@ const toggle = () => {
 
   return (
     <Container className=" flex f-just">
-    
-        
 
         <div style={{width: state ? "200px" : "50px"}} className="sidebar">
           <div className="logo">
-           <h2 > Daniel </h2>
+          <img src={icon} alt="React Logo" />
+           <h2 > Dev </h2>
            
 
           </div>

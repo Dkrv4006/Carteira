@@ -1,8 +1,9 @@
 
 import { Button, Container,TransactionButton } from "./style"
 import  Modal  from 'react-modal'
-import { FormEvent, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 import { api } from "../../Servers/api";
+import { Transaction } from "../../Transaction";
 
 
 interface IProps {
@@ -16,6 +17,12 @@ export const NewTrasation: React.FC<IProps> = ({ isNewTresictionOpenModal,hadleC
   const [valor, setvalor] = useState(0)
   const [category, setcategory] = useState('')
   const [type, settype] = useState('deposit')
+
+
+  const context = useContext(Transaction)
+
+  console.log(context);
+  
 
   function handleTransection(e: FormEvent) {
     e.preventDefault()

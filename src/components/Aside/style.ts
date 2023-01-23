@@ -9,17 +9,24 @@ export const Container = styled.div`
       
 
 h2{
-      color: blue;
+      color: ${props=> props.theme.colors.success};
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .logo{
       display: flex;
       justify-content: center;
+      align-items: center;
       width: 100%;
       margin-bottom: 10px;
       transition: all 2s;
 }
 
+.logo > img{
+      width: 20px;
+      height: 20px;
+      margin: 5px;
+}
+ 
 .sidebar{
       display: flex;
       flex-direction: column;
@@ -38,7 +45,6 @@ h2{
       height: 40px;
       margin-top:10px;
       padding: 0 5px;
-    
       transition: all .5s;
 
       &:hover{
@@ -71,8 +77,7 @@ h2{
       color: ${props=> props.theme.colors.white};
       margin: 10px;
       font-size: 30px;
-
-      
+    
 }
 .button{
       text-align: center;
@@ -83,9 +88,7 @@ h2{
       padding: 10px;
    
      position: relative;
-      
-    
-     
+   
 }
 .fa-angles-left{
       position: absolute;
@@ -109,15 +112,14 @@ span{
 }
 .fa-list{
       
-            animation-duration: 5s;
-            animation-name: slide;
+      animation-duration: 5s;
+      animation-name: slide;
 
-            &:hover{
-            cursor: pointer;
-            ;
-           
+      &:hover{
+      cursor: pointer;
+
       }
-      }
+}
 
 .text{
       color: ${props=> props.theme.colors.white};

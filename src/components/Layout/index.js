@@ -5,7 +5,6 @@ import { Contents } from "../Content"
 import { Header } from "../Header"
 import { Container } from "./style"
 import { BrowserRouter} from 'react-router-dom'
-import { Sidbar } from "../Sidbar";
 import  Modal  from 'react-modal'
 import { useState } from "react"
 export const Layout = ( { children }) => {

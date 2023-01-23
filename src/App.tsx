@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { ThemeProvider } from 'styled-components';
 import { Layout } from './components/Layout';
 import dark  from './style/theme/dark';
@@ -8,12 +8,13 @@ import { Dashboard}  from './pages/Destboard';
 import {  Route, Routes } from 'react-router-dom';
 import { Mortgage } from './pages/Mortgage';
 import { History } from './pages/History';
-import { Sidbar } from './components/Sidbar';
+
 import { Cards } from './pages/Cards';
 import { ContentHeader } from './components/ContentHeader';
-import { Header, Togle } from './components/Header';
+import { Togle } from './components/Header';
 import light from './style/theme/light';
 import { NewTrasation } from './components/NewTrasation';
+import {  TransactionProvaide } from './Transaction';
 
 ;
 
@@ -34,6 +35,10 @@ export  const App = () => {
     setIsNewTresictionOpenModal(false)
   }
   return (
+
+    <TransactionProvaide>
+
+   
     <ThemeProvider theme={state ? dark : light}>
       
     
@@ -63,5 +68,7 @@ export  const App = () => {
        </Layout>
           
     </ThemeProvider>
+
+    </TransactionProvaide>
   )
 }
