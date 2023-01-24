@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const Container = styled.div`
     padding: 25px 0;
     width: 800px;
+    height: 80%;
     background: ${props=> props.theme.colors.primary};
 
     h1{

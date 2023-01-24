@@ -1,15 +1,15 @@
 
-import { useContext, useEffect, useState } from "react"
-import { api } from "../../Servers/api"
-import { Transaction } from "../../Transaction"
+import { useContext } from "react"
+
+import { TransactionContext } from "../../Transaction"
 import { Container } from "./style"
 
 
 
 export const Table: React.FC = () => {
 
-  const transactions = useContext(Transaction)
-
+  const { newtransactions} = useContext(TransactionContext)
+ 
   return (
     <Container>
 
@@ -21,14 +21,21 @@ export const Table: React.FC = () => {
             <th>Valor</th>
             <th>Categoria</th>
             <th>Data</th>
-        </tr>
+        </tr >
     </thead>
+    
     <tbody>
-      {transactions.map(transaction => {
+      {newtransactions.map(transaction => {
+
+       console.log(transaction);
+       console.log('test');
+       
+       
 
         return(
+            
         <tr key={transaction.id}>
-
+            
             <td>{transaction.title}</td>
             <td className={transaction.type} >{new Intl.NumberFormat('pt-BR',{
               style: 'currency',

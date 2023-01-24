@@ -31,10 +31,11 @@ export const Layout = ( { children }) => {
             <Header open={hadleOpen}/>
 
             <Modal
+            // appElement={document.getElementById("hereIsYourRootElementId")}
         isOpen={isNewTresictionOpenModal}
-        
+        ariaHideApp={false}
         onRequestClose={hadleClose}
-       
+        appElement={document.getElementById('#root')}
         contentLabel="Example Modal"
       ></Modal>
 

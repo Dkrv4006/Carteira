@@ -2,7 +2,8 @@ import styled from "styled-components"
 
 export const Container = styled.div`
     width: 100%;
-    height: auto;
+    height: 55%;
+    overflow: auto;
 
 
 table{

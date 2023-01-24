@@ -1,8 +1,7 @@
 
-import { Button } from "@mui/material"
-import { SelectInput } from "../SelectInput"
+
 import { Container } from "./style"
-import { MdOutlineSearch } from "react-icons/md";
+
 export const ContentHeader: React.FC = () => {
   return (
     <Container>

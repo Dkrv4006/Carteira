@@ -2,8 +2,8 @@
 import { Button, Container,TransactionButton } from "./style"
 import  Modal  from 'react-modal'
 import { FormEvent, useContext, useState } from "react";
-import { api } from "../../Servers/api";
-import { Transaction } from "../../Transaction";
+
+import { TransactionContext } from "../../Transaction";
 
 
 interface IProps {
@@ -19,25 +19,26 @@ export const NewTrasation: React.FC<IProps> = ({ isNewTresictionOpenModal,hadleC
   const [type, settype] = useState('deposit')
 
 
-  const context = useContext(Transaction)
+  const {createTransaction } = useContext(TransactionContext)
 
-  console.log(context);
   
 
-  function handleTransection(e: FormEvent) {
+  async function handleTransection(e: FormEvent) {
     e.preventDefault()
 
-    const data = {
-      title,valor,category,type
-  
-    }
-
-    api.post('/transaction', data)
-    hadleClose()
-
-    setTitle('')
-    setcategory('')
-    setvalor(0)
+    console.log('1');
+    
+   await createTransaction({
+      title,
+      type,
+      category,
+      valor,
+  })
+    
+  setTitle('')
+  setcategory('')
+  setvalor(0)
+  hadleClose()
 
     
   };
@@ -45,6 +46,7 @@ export const NewTrasation: React.FC<IProps> = ({ isNewTresictionOpenModal,hadleC
   return (
       <Modal
       isOpen={isNewTresictionOpenModal}
+      ariaHideApp={false}
       onRequestClose={hadleClose}
       overlayClassName="overlay"
       className="modal"
