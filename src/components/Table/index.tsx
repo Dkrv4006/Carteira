@@ -27,17 +27,12 @@ export const Table: React.FC = () => {
     <tbody>
       {newtransactions.map(transaction => {
 
-       console.log(transaction);
-       console.log('test');
-       
-       
-
         return(
             
         <tr key={transaction.id}>
             
             <td>{transaction.title}</td>
-            <td className={transaction.type} >{new Intl.NumberFormat('pt-BR',{
+            <td className={transaction.type} >{transaction.type === 'deposit' ? '' : '- '} {new Intl.NumberFormat('pt-BR',{
               style: 'currency',
               currency: 'BRL'
             }).format(transaction.valor)}</td>

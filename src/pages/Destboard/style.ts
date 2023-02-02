@@ -42,11 +42,18 @@ export const Main = styled.div`
     display: flex;
     justify-content: space-between;
 
+    
+
 .tap-left, .tap-center, .tap-right{
     width: 32%;
     
     height: 95%;
     background: ${props=> props.theme.colors.secondary};
+
+    display: flex;
+
+    flex-direction: column;
+
 }
 .tap-left{
     border-radius: 10px;
@@ -59,6 +66,21 @@ export const Main = styled.div`
 .tap-right{
     border-radius: 10px;
     border-top: 4px solid royalblue;
+}
+
+.header{
+    width: 100%;
+    padding: 10px;
+    color: ${props=> props.theme.colors.white};
+    text-align: center;
+}
+.prece{
+    width: 100%;
+    height: 70%;
+    padding: 20px 10px;
+    text-align: center;
+    color: ${props=> props.theme.colors.white};
+    font-size: 30px;
 }
 
 `

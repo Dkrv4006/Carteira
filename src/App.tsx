@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { ThemeProvider } from 'styled-components';
 import { Layout } from './components/Layout';
 import dark  from './style/theme/dark';
@@ -15,16 +15,22 @@ import { Togle } from './components/Header';
 import light from './style/theme/light';
 import { NewTrasation } from './components/NewTrasation';
 import {  TransactionProvaide } from './Transaction';
+import {  ThemeContextProvider, ThemeContext } from './style/state';
 
 ;
 
 export  const App = () => {
+
+  const { stateTheme} = useContext(ThemeContext)
 
   const [state, setState] = useState(true)
 
   const open = ()=>{
     setState(!state)
   }
+
+  console.log(stateTheme + 'teste');
+  
 
   const [isNewTresictionOpenModal, setIsNewTresictionOpenModal] = useState(false)
 
@@ -36,17 +42,20 @@ export  const App = () => {
   }
   return (
 
+    
+    
     <TransactionProvaide>
 
    
-    <ThemeProvider theme={state ? dark : light}>
+      <ThemeContextProvider>
+    <ThemeProvider theme={stateTheme}>
       
     
        <GlobalStyle/>
 
        
        <Layout >
-        <button onClick={open}>theme</button>
+      {/* <button onClick={open}>theme</button> */}
         <ContentHeader/>
           {/* <Dashboard/> */}
          <Togle/>
@@ -68,7 +77,9 @@ export  const App = () => {
        </Layout>
           
     </ThemeProvider>
-
+    </ThemeContextProvider>
     </TransactionProvaide>
+
+
   )
 }

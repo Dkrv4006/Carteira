@@ -1,8 +1,8 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import {Container } from "./style"
 import  icon   from "../../assets/icon.svg"
 import { NavLink } from "react-router-dom"
-
+import{ TransactionContext } from '../../Transaction'
 
 export const Aside = () => {
 
@@ -39,6 +39,8 @@ const toggle = () => {
       icon: <i className="fa-sharp fa-solid fa-gear"></i>
     },
   ]
+
+
 
   return (
     <Container className=" flex f-just">

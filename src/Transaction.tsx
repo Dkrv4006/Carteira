@@ -40,14 +40,12 @@ useEffect(() => {
 
 
 async function createTransaction( transactionInput: TransactionInput ){
-    console.log('1');
     const response = await api.post('/transaction', { 
         
         ...transactionInput, 
         createdAt: new Date()
     })
     const { transactions } = response.data
-      console.log(transactions);
       
     setnewtransaction([
         ...newtransactions,

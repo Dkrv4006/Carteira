@@ -2,8 +2,8 @@
 import { Container } from "./style"
 
 import emojis from "../../utils/emjis"
-import { useMemo } from "react"
-import { Toggle } from "../Toggle"
+import { useContext, useMemo } from "react"
+import { ThemeContext } from "../../style/state"
 
 interface IProps {
    open?: () => void;
@@ -16,6 +16,8 @@ export const Header: React.FC<IProps> = ({open}) => {
      return emojis[index]
  }, [])
 
+ const { toggleTheme } = useContext(ThemeContext)
+
   return (
     <Container>
         
@@ -24,6 +26,7 @@ export const Header: React.FC<IProps> = ({open}) => {
         <h3>Olá,{emojes}</h3>
         
        </div>
+       <button onClick={toggleTheme}>tema</button>
     </Container>
   )
 }
